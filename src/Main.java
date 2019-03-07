@@ -11,9 +11,12 @@ public class Main {
 		int option = -1;
 		
 		do {
-			System.out.println("Bem Vindo!");
-			System.out.println("1: Add User");
-			System.out.println("2: Não Tem Nada");
+			System.out.println("Bem Vindo! \n");
+			System.out.println("1: Incluir um novo usuário");
+			System.out.println("2: Alterar um usuário existente");
+			System.out.println("3: Remover um usuário existente");
+			System.out.println("4: Exibir um usuário existente");
+			System.out.println("5: Exibir todos os usuários existentes");
 			System.out.println("0: Sair");
 			
 			try {
