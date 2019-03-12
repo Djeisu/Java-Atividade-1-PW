@@ -6,6 +6,9 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) throws IOException{
+		//Faz toda a configuração de autenticação
+		Auth auth = new Auth();
+		
 		Scanner in = new Scanner(System.in);
 		PrintStream out = System.out;
 		int option = -1;
@@ -26,10 +29,23 @@ public class Main {
 			}
 			
 			switch (option) {
-			case 1:
+			case 0:
+				System.out.println("\n\n Valeu, meu fi, volte sempre \n");
+				continue;
+			case 1: //Adicionar novo usuário
+				auth.signup();
 				System.out.println("\n\n Adicionou um user doidão \n");
 				continue;
-			case 2:
+			case 2: //Alterar usuário existênte
+				System.out.println("\n\n Aqui não tem nada ainda \n");
+				continue;
+			case 3: //Remover um usuário existênte
+				System.out.println("\n\n Aqui não tem nada ainda \n");
+				continue;
+			case 4: //Exibir usuário existênte
+				System.out.println("\n\n Aqui não tem nada ainda \n");
+				continue;
+			case 5: //Exibir todos os usuários
 				System.out.println("\n\n Aqui não tem nada ainda \n");
 				continue;
 			default:
