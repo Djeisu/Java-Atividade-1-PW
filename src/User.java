@@ -2,7 +2,7 @@
 public class User {
 	private String name;
 	private String login;
-	private String senha;
+	private String password;
 	private String email;
 	
 	User(){
@@ -25,12 +25,12 @@ public class User {
 		this.login = login;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setPassword(String senha) {
+		this.password = senha;
 	}
 
 	public String getEmail() {

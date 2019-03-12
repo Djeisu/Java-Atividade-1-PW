@@ -47,7 +47,7 @@ public class Auth {
 			case 4:
 				System.out.println("Informe o sua Senha:");
 				try {
-					this.currentUser.setSenha(in.nextLine());
+					this.currentUser.setPassword(in.nextLine());
 					state = 0;
 				}catch (Exception e){
 					System.out.println(e);
@@ -59,6 +59,6 @@ public class Auth {
 		System.out.println(this.currentUser.getName());
 		System.out.println(this.currentUser.getLogin());
 		System.out.println(this.currentUser.getEmail());
-		System.out.println(this.currentUser.getSenha());
+		System.out.println(this.currentUser.getPassword());
 	}
 }
