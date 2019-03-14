@@ -1,6 +1,7 @@
 public class AuthService {
-	public User signup(User u){
-		return new User();
+	public void signup(User u){
+		System.out.println(u.getUserLineRegister());
+		//return new User();
 	}
 	
 	public User login(User u){

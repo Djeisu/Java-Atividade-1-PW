@@ -40,4 +40,28 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public boolean validateName(){
+		return this.getName() != "";
+	}
+	
+	public boolean validateEmail(){
+		return (this.getEmail().split("@").length == 2);
+	}
+
+	public boolean validateLogin(){
+		return this.getLogin() != "";
+	}
+
+	public boolean validatePassword(){
+		return this.getPassword() != "";
+	}
+	
+	public String getUserLineRegister(){
+		return this.getName() + ";" + this.getEmail() + ";" + this.getLogin() + ";" + this.getPassword(); 
+	}
+	
+	public String getUserLineRegister(User u){
+		return u.getName() + ";" + u.getEmail() + ";" + u.getLogin() + ";" + u.getPassword(); 
+	}
 }

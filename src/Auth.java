@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class Auth {
 	private User currentUser;
 	private Scanner in;
+	private AuthService authService;
 	
 	Auth(){
 		this.currentUser = new User();
 		this.in = new Scanner(System.in);
+		this.authService = new AuthService();
 	}
 	
 	public User getCurrentUser(){
@@ -21,7 +23,10 @@ public class Auth {
 				System.out.println("Informe o seu nome:");
 				try {
 					this.currentUser.setName(in.nextLine());
-					state++;
+					if(this.currentUser.validateName())
+						state++;
+					else
+						System.out.println("Nome inválido, tente novamente!");
 				}catch (Exception e){
 					System.out.println(e);
 				}
@@ -30,7 +35,10 @@ public class Auth {
 				System.out.println("Informe o seu Usuario:");
 				try {
 					this.currentUser.setLogin(in.nextLine());
-					state++;
+					if(this.currentUser.validateLogin())
+						state++;
+					else
+						System.out.println("Login inválido, tente novamente!");
 				}catch (Exception e){
 					System.out.println(e);
 				}
@@ -39,7 +47,10 @@ public class Auth {
 				System.out.println("Informe o seu Email:");
 				try {
 					this.currentUser.setEmail(in.nextLine());
-					state++;
+					if(this.currentUser.validateEmail())
+						state++;
+					else
+						System.out.println("Email inválido, tente novamente!");
 				}catch (Exception e){
 					System.out.println(e);
 				}
@@ -48,7 +59,10 @@ public class Auth {
 				System.out.println("Informe o sua Senha:");
 				try {
 					this.currentUser.setPassword(in.nextLine());
-					state = 0;
+					if(this.currentUser.validatePassword())
+						state = 0;
+					else
+						System.out.println("Senha inválido, tente novamente!");
 				}catch (Exception e){
 					System.out.println(e);
 				}
@@ -56,9 +70,6 @@ public class Auth {
 			}
 		}while(state != 0);
 		
-		System.out.println(this.currentUser.getName());
-		System.out.println(this.currentUser.getLogin());
-		System.out.println(this.currentUser.getEmail());
-		System.out.println(this.currentUser.getPassword());
+		this.authService.signup(this.currentUser);
 	}
 }
