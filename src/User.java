@@ -8,6 +8,13 @@ public class User {
 	User(){
 		
 	}
+	
+	User(String n, String e, String l, String p){
+		this.name = n;
+		this.login = l;
+		this.password = p;
+		this.email = e;
+	}
 
 	public String getName() {
 		return name;
